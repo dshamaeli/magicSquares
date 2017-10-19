@@ -14,7 +14,8 @@ class MagicSquare
   
   public void print()
   { 
-    System.out.println(int1 + " " + int2 + " " + int3);
-  }
-
+    System.out.println((int3 - int2) + "\t" + (int3 + (int1 + int2)) + "\t" + (int3 - int1)+"\n");
+    System.out.println(int3 - (int1 - int2) + "\t" + int3 + "\t" + (int3 + (int1 - int2))+"\n");
+    System.out.println((int3 + int1) + "\t" + (int3 - (int1 + int2)) + "\t" + (int3 + int2));
+  }  
 }
