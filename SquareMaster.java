@@ -17,15 +17,15 @@ class SquareMaster{
       secondNum = input.nextInt();
       thirdNum = input.nextInt();
       sort(firstNum, secondNum, thirdNum);
-      System.out.println("This is the SquareMaster!");
-      System.out.println("You have given me " + firstNum + " " + secondNum + " " + thirdNum);
+      System.out.println("\nThis is the SquareMaster!\n");
+      System.out.println("You have given me " + firstNum + " " + secondNum + " " + thirdNum + "\n");
       if (0 < firstNum && firstNum < secondNum && secondNum < (thirdNum - firstNum) && 
                                                             (secondNum != 2 * firstNum))
         break;
-      System.out.println("these are not valid keys");
+      System.out.println("these are not valid keys!!!");
       System.out.print("\nPlease enter your three Magic Keys again: ");
     } while (true);
-    System.out.println("The Keys are appropriate. Below is your Magic Square. Use it wisely!");
+    System.out.println("The Keys are appropriate. Below is your Magic Square. Use it wisely!\n");
     MagicSquare square = new MagicSquare(firstNum, secondNum, thirdNum);
     square.print();
   }
