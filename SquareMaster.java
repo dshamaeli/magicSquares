@@ -11,7 +11,7 @@ class SquareMaster{
   }
 
   public static void main(String[] args) {
-    System.out.print("Please enter your three Magic Keys: ");
+    System.out.print("Please enter your three Magic Keys(one or more 0 to exit): ");
     do {
       firstNum = input.nextInt();
       secondNum = input.nextInt();
@@ -22,9 +22,15 @@ class SquareMaster{
       if (0 < firstNum && firstNum < secondNum && secondNum < (thirdNum - firstNum) && 
                                                             (secondNum != 2 * firstNum))
         break;
+      if (firstNum <= 0 || secondNum <=0 || thirdNum <= 0)
+        break; 
       System.out.println("these are not valid keys!!!");
-      System.out.print("\nPlease enter your three Magic Keys again: ");
-    } while (true);
+      System.out.print("\nPlease enter your three Magic Keys again(one or more 0 to exit): ");
+    } while (firstNum > 0 && secondNum > 0 && thirdNum > 0 );
+    if (firstNum <= 0 || secondNum <=0 || thirdNum <= 0){
+      System.out.println("YOU MAY NOT ENTER!!!");
+      return; 
+    }
     System.out.println("The Keys are appropriate. Below is your Magic Square. Use it wisely!\n");
     MagicSquare square = new MagicSquare(firstNum, secondNum, thirdNum);
     square.print();
