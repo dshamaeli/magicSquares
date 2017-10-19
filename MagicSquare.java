@@ -1,34 +1,20 @@
+
+
 class MagicSquare
 {
-  private int first;
-  private int second;
-  private int third;
-  MagicSquare(int first, int second,int third)
+  private int int1;
+  private int int2;
+  private int int3;
+  MagicSquare(int int1, int int2,int int3)
   {
-    this.first = first;
-    this.second = second;
-    this.third = third;
+    this.int1 = int1;
+    this.int2 = int2;
+    this.int3 = int3;
   }
-/*  private inputCheck(){
+  
+  public void print()
+  { 
+    System.out.println(int1 + " " + int2 + " " + int3);
+  }
 
-  }
-  public MagicSquare create()
-  {
-
-  } */
-  private void swap(int a,int b)
-  {
-    int buffer;
-    buffer = a;
-    a=b;
-    b=buffer;
-  }
-  public void sort()
-  {
-    if (third < first) swap(first,third);
-     else if (third < second) swap(second,third);
-            else swap(first,third);
-              if(third<second) swap(second,third);
-     System.out.print(first + " " + second + " " + third);
-  }
 }

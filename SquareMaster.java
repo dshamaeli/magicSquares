@@ -2,47 +2,37 @@ import java.util.Scanner;
 
 class SquareMaster
 {
-  private static int first,second,third;
+  private static int firstNum,secondNum,thirdNum;
   private static Scanner input = new Scanner(System.in);
+
+  public  static void sort(int num1, int num2, int num3)
+  {
+    firstNum = Math.min(num1 , Math.min(num2 , num3));
+    thirdNum = Math.max(num1, Math.max(num2 , num3));
+    secondNum = num1 + num2 + num3 - firstNum - thirdNum;
+  }
+    
   public static void main(String[] args)
   {
-    System.out.print("Please enter Number magic keys:");
-    first = input.nextInt();
-    second = input.nextInt();
-    third = input.nextInt();
-    MagicSquare square = new MagicSquare(first,second,third);
-    square.sort();
+    System.out.print("Please enter your three Magic Keys: ");
+    do
+    {
+    firstNum = input.nextInt();
+    secondNum = input.nextInt();
+    thirdNum = input.nextInt();
+    sort(firstNum,secondNum,thirdNum);
+    System.out.println("This is the SquareMaster!");
+    System.out.println("You have given me " + firstNum + " " + secondNum + " " + thirdNum);
+    if (0<firstNum && firstNum < secondNum && secondNum < (thirdNum - firstNum) 
+                && (secondNum != 2 * firstNum))
+        break;
+    System.out.println("these are not valid keys");
+    System.out.print("\nPlease enter your three Magic Keys again: ");
+    
+    } while(true);
+
+    MagicSquare square = new MagicSquare(firstNum,secondNum,thirdNum);
+    square.print();
   }
 }
 
-/*  private static int getValidInt(String tag,String name)
- {
-   int var,counter;
-   Scanner input = new Scanner(System.in);
-
-   do
-   {
-     //prompting user for input
-     System.out.print("Please enter Number magic keys:");
-
-
-     //check if input is an integer
-     while(!input.hasNextInt())
-     {
-       System.out.print("The "+ name +"'s " + tag +" should be a number(1-10): ");
-       input.next();
-     }
-
-     //getting user input
-     var = input.nextInt();
-   }
-   while(0<a && a<b && b<(c-a)); //checking unput until get a positive number
-
-   return var;
- }
- public void conjure()
- {
-   System.out.print("Please enter Number magic keys:");
- }
-
-}*/
